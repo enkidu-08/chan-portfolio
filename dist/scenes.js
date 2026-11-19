@@ -87,7 +87,7 @@ function initRain() {
         drop.y = -drop.length;
       }
       context.beginPath();
-      context.strokeStyle = `rgba(214, 223, 255, ${drop.alpha})`;
+      context.strokeStyle = `rgba(220, 198, 255, ${drop.alpha})`;
       context.lineWidth = drop.thickness;
       context.moveTo(drop.x, drop.y);
       context.lineTo(drop.x + drop.length * .24, drop.y - drop.length);
