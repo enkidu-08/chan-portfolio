@@ -10,6 +10,12 @@ Open `dist/index.html` in a browser. Video buttons open YouTube when viewing the
 
 For an in-page video player, run `python -m http.server 8080 --bind 127.0.0.1 --directory dist` from this folder, then visit `http://127.0.0.1:8080/`. Every player also has a direct YouTube link.
 
+## GitHub Pages
+
+The [live portfolio](https://jayandradeph.github.io/chan-portfolio/) is hosted on GitHub Pages. The [Publish portfolio workflow](.github/workflows/pages.yml) publishes `dist/` whenever changes are pushed to `main`. It can also be run manually from the repository's Actions tab.
+
+After a portfolio update, check that the workflow succeeded and open the live site to verify the changed content. JavaScript, styles, and artwork paths should stay relative to the project URL.
+
 ## Motion and controls
 
 - Drag the hero artwork to turn the carousel. Use Prev or Next to step through it. Pause stops the carousel and rain.
