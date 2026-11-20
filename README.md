@@ -23,13 +23,13 @@ After a portfolio update, check that the workflow succeeded and open the live si
 - Drag the hero artwork to turn the carousel. Use Prev or Next to step through it. Pause stops the carousel and rain.
 - Scroll down through Selected Work on desktop to move the project strip horizontally. On a narrow screen, swipe to browse. Selected Work and Shorts both support Prev and Next buttons and arrow-key navigation when the strip is focused.
 - Select a long-form edit in the playlist and press Play on its large preview. Swipe the Shorts carousel to change the centered video.
-- Drag the Design Archive globe or use the arrow keys when it has focus. Click an artwork tile or press Enter to bring it forward and open its full-size image. On a phone, drag sideways to rotate while vertical gestures scroll the page. The category filters apply to both Globe and Grid.
+- Drag the Design Archive globe or use the arrow keys when it has focus. Click an artwork tile or press Enter to bring it forward and open its full-size image. On a phone, drag sideways to rotate while vertical gestures scroll the page. Embroidery and Logos have separate filters in both Globe and Grid.
 - The header hides as you scroll down and returns when you scroll up. The navigation also appears at the top of the page and when it receives keyboard focus.
 - With reduced motion, the globe follows direct movement and opens artwork immediately. The hero uses direct controls, Selected Work uses standard horizontal scrolling, and Shorts stays level as the rail moves.
 
 ## Update the portfolio
 
-- Edit design titles, types, and order in `dist/designs.js`. Each entry uses two files in `dist/assets/work/`, a gallery image named `<stem>-card.webp` and a larger viewer image named `<stem>.webp`.
+- Edit design titles, types, and order in `dist/designs.js`. Each entry uses two files in `dist/assets/work/`, a gallery image named `<stem>-card.webp` and a larger viewer image named `<stem>.webp`. Set the optional fourth value to `"dark-mat"` for white artwork that needs a dark background.
 - The `featuredDesigns` list in the same file controls the six selected projects and their lighting colors. These designs also appear in the hero alongside video posters.
 - Edit the biography, video samples, channel credits, and contact links in `dist/index.html`. Video poster filenames use the YouTube video ID. The screening room uses the `<video-id>-wide.jpg` posters, and its playlist uses the smaller `<video-id>.jpg` files.
 - Edit the shared palette in the `:root` block of `dist/styles.css`. The browser theme color is set in `dist/index.html`, and the canvas rain color is in `dist/scenes.js`.
@@ -40,7 +40,7 @@ After a portfolio update, check that the workflow succeeded and open the live si
 - [Enkidu Ltd Carrd](https://enkidulimited.carrd.co/) supplies the portrait, channel images, editing samples, bio, and contact details.
 - The contact footer links to Chan’s supplied LinkedIn profile and Telegram handle. [LinkedIn](https://www.linkedin.com/in/cristian-anthony-orge-0a6286298/) · [Telegram](https://t.me/enkidu08)
 - The contact icons are from Font Awesome Free 6.7.2 by Fonticons, Inc. Their fills are white to match the portfolio. [Font Awesome](https://github.com/FortAwesome/Font-Awesome/tree/6.7.2) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-- Chan supplied the 56 designs in the archive. This repository contains web-sized copies for the globe, grid, and artwork viewer.
+- Chan supplied the 64 designs in the archive, including six embroidery pieces and seven logos. This repository contains web-sized copies for the globe, grid, and artwork viewer.
 - 3D Jack informed the oversized title and moving project strip. Dark Portfolio informed the curved artwork track behind the foreground portrait. [3D Jack Portfolio](https://studio.motionsites.ai/explore/3d-jack-portfolio-hero) · [Dark Portfolio](https://studio.motionsites.ai/explore/dark-portfolio)
 - Penthouse Rain informed the floating navigation and glass entrance reveal. Honey Bee informed the heavy, rounded headline lettering. [Penthouse Rain](https://studio.motionsites.ai/explore/penthouse-rain) · [Honey Bee](https://studio.motionsites.ai/explore/honey-bee)
 - Orbit Sphere informed the arrangement of artwork tiles around a globe and the transition from a selected tile to a full-size view. [Orbit Sphere](https://studio.motionsites.ai/explore/orbit-sphere)
@@ -62,7 +62,7 @@ The built-in ImageGen tool created the original background in `dist/assets/profi
 
 - **Implemented** — Outfit typography, scroll-aware navigation, 3D artwork globe with filters and grid view, and a dark footer with icon links for email, Instagram, LinkedIn, and Telegram.
 - **Build Verified** — JavaScript syntax, globe layout, and local asset checks passed for the portfolio media, font, and four contact icons. The contact destinations match the supplied links and handle.
-- **Runtime Verified** — Browser checks at 1280 px, 390 px, and 320 px covered the layout, globe rotation, opening and returning from full-size artwork, archive filters, all 56 grid entries, and scroll-direction navigation. At 320 px all four contact icons loaded, each row fit on one line, and keyboard focus reached Telegram.
+- **Runtime Verified** — Browser checks at 1280 px, 390 px, and 320 px covered the layout, globe rotation, opening and returning from full-size artwork, archive filters, all 64 grid entries, and scroll-direction navigation. At 320 px all four contact icons loaded, each row fit on one line, and keyboard focus reached Telegram.
 - **Complete** — The updated local site and globe preview are ready for review.
 
 ### Dark purple palette
@@ -71,3 +71,10 @@ The built-in ImageGen tool created the original background in `dist/assets/profi
 - **Build Verified** — JavaScript syntax, the browser theme color, and contrast for the shared text and control colors passed local checks.
 - **Runtime Verified** — Reviewed the purple hero and archive in the browser at desktop and phone widths. Opened full-size artwork at 1280 px and checked the Caps filter and Grid view at 390 px.
 - **Complete** — The palette update is ready to review in the local preview.
+
+### Embroidery and logos
+
+- **Implemented** — Removed Special and Special (alternate), added five embroidery designs and five logos, and gave Embroidery and Logos separate filters. Two white logos use dark backgrounds.
+- **Build Verified** — JavaScript syntax, the six featured projects, and both WebP sizes for each of the 64 archive entries passed local checks.
+- **Runtime Verified** — Loaded all 64 grid entries at 1280 px. Verified both category filters in Globe and Grid, keyboard navigation, and full-size artwork at desktop and 390 px phone widths.
+- **Complete** — The archive update is ready for pull request review.

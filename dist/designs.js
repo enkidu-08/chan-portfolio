@@ -1,4 +1,4 @@
-// Display title, project type, and image filename stem.
+// Display title, project type, image filename stem, and optional background tone.
 const designProjects = [
   ["Compostela Raven", "jersey", "jersey-compostela-raven"],
   ["Black Reign", "set", "set-black-reign"],
@@ -49,13 +49,21 @@ const designProjects = [
   ["Mitsumi Mat", "long-sleeve", "long-sleeve-mitsumi-mat"],
   ["Black Reign", "long-sleeve", "long-sleeve-black-reign"],
   ["NUSTAR", "long-sleeve", "long-sleeve-nu-star"],
-  ["Special (alternate)", "long-sleeve", "long-sleeve-special-2"],
-  ["Special", "long-sleeve", "long-sleeve-special"],
   ["CTODA", "hoodie", "hoodie-ctoda"],
   ["Guila Guila Riders", "hoodie", "hoodie-guila-guila-riders"],
   ["JM Solar and CCTV", "hoodie", "hoodie-jm-solar-and-cctv"],
   ["Pro Amity", "hoodie", "hoodie-pro-amity"],
   ["CMX Black", "hoodie", "hoodie-cmx-black"],
+  ["Steel Asia", "embroidery", "embroidery-steel-asia"],
+  ["Bubu and Dud", "embroidery", "embroidery-bubu-and-dud"],
+  ["Tetas", "embroidery", "embroidery-tetas"],
+  ["Compostela Apparel Blue Badge", "embroidery", "embroidery-ca-blue-badge"],
+  ["Turbo Baba", "embroidery", "embroidery-turbo-baba"],
+  ["Year End Mosh", "logo", "marks-year-end-mosh", "dark-mat"],
+  ["RJ Bike Service", "logo", "marks-rj-bike-service", "dark-mat"],
+  ["Organize Chaos", "logo", "marks-organize-chaos"],
+  ["ECR Logo 2025", "logo", "marks-ecr-logo-2025"],
+  ["SAC Modern Logo 2024", "logo", "marks-sac-modern-logo-2024"],
 ];
 
 // Project filename stem and lighting colors for each featured display.
