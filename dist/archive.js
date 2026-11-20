@@ -171,7 +171,7 @@ function initArchiveGlobe(panel) {
       button.className = "sphere-tile";
       button.tabIndex = -1;
       button.dataset.sphereIndex = String(index);
-      button.dataset.tone = project.filter;
+      button.dataset.tone = project.tone;
       button.setAttribute("aria-label", `View ${project.title}, ${project.label}`);
       button.setAttribute("aria-haspopup", "dialog");
       button.style.setProperty("--tile-yaw", `${longitude}rad`);
@@ -328,8 +328,7 @@ function initArchive() {
       card.querySelector(".design-open").dataset.project = project.key;
       card.querySelector(".design-name").textContent = project.title;
       card.querySelector(".design-type").textContent = project.label;
-      cover.dataset.tone = project.filter;
-      cover.classList.toggle("design-cover--marks", project.filter === "marks");
+      cover.dataset.tone = project.tone;
       card.querySelector("img").src = projectPath(project, true);
       cards.append(card);
     });

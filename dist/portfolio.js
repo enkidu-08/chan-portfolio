@@ -8,15 +8,14 @@ const projectTypes = {
   hoodie: { label: "Hoodie", filter: "layers" },
   cap: { label: "Cap", filter: "caps" },
   set: { label: "Apparel set", filter: "sets" },
-  logo: { label: "Logo & icon", filter: "marks" },
-  embroidery: { label: "Embroidery", filter: "marks" },
+  logo: { label: "Logo & icon", filter: "logos", tone: "marks" },
+  embroidery: { label: "Embroidery", filter: "embroidery", tone: "marks" },
 };
 
-const projects = designProjects.map(([title, type, key]) => ({
-  title,
-  key,
-  ...projectTypes[type],
-}));
+const projects = designProjects.map(([title, type, key, backgroundTone]) => {
+  const { label, filter, tone = filter } = projectTypes[type];
+  return { title, key, label, filter, tone: backgroundTone ?? tone };
+});
 
 const projectsByKey = new Map(projects.map((project) => [project.key, project]));
 const featuredProjects = featuredDesigns.flatMap(([key, light, shadow]) => {
@@ -73,7 +72,7 @@ function showProject() {
   projectTitle.textContent = project.title;
   projectImage.alt = `${project.title} ${project.label.toLowerCase()} artwork`;
   projectImage.src = projectPath(project);
-  projectImage.parentElement.classList.toggle("dialog-image--marks", project.filter === "marks");
+  projectImage.parentElement.dataset.tone = project.tone;
   projectPosition.textContent = `${activeProjectIndex + 1} of ${viewerProjects.length}`;
   previousProject.disabled = nextProject.disabled = viewerProjects.length < 2;
 }
